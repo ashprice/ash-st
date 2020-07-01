@@ -31,7 +31,7 @@ st: $(OBJ)
 	$(CC) -o $@ $(OBJ) $(STLDFLAGS)
 
 clean:
-	rm -f st $(OBJ) st-$(VERSION).tar.gz *.orig *.rej
+	rm -f st $(OBJ) st-$(VERSION).tar.gz *.o *.orig *.rej
 
 dist: clean
 	mkdir -p st-$(VERSION)
@@ -50,13 +50,11 @@ install: st
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-copyout
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-urlhandler
 
-=======
 	cp -f st-copyout $(DESTDIR)$(PREFIX)/bin
 	cp -f st-urlhandler $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-copyout
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-urlhandler
->>>>>>> baa9fa0... following links now separate script
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
 	sed "s/VERSION/$(VERSION)/g" < st.1 > $(DESTDIR)$(MANPREFIX)/man1/st.1
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/st.1
@@ -65,11 +63,8 @@ install: st
 
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/st
-<<<<<<< HEAD
-=======
 	rm -f $(DESTDIR)$(PREFIX)/bin/st-copyout
 	rm -f $(DESTDIR)$(PREFIX)/bin/st-urlhandler
->>>>>>> baa9fa0... following links now separate script
 	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
 
 .PHONY: all options clean dist install uninstall

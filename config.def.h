@@ -195,9 +195,6 @@ static MouseShortcut mshortcuts[] = {
 
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
-<<<<<<< HEAD:config.def.h
-#define TERMMOD (ControlMask|ShiftMask)
-=======
 #define TERMMOD (Mod1Mask|ShiftMask)
 
 MouseKey mkeys[] = {
@@ -217,7 +214,6 @@ static char *copyurlcmd[] = { "/bin/sh", "-c",
     "externalpipe", NULL };
 
 static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
->>>>>>> baa9fa0... following links now separate script:config.h
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
